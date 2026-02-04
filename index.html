@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Objects Tutorial </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 5px solid #e74c3c;
+            padding-left: 10px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        .example-box {
+            background-color: white;
+            border: 2px solid #e74c3c;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .code {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .output {
+            background-color: #e8f8f5;
+            border-left: 4px solid #27ae60;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+        button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #c0392b;
+        }
+        .syntax {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+        .note {
+            background-color: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #e74c3c;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Objects Tutorial</h1>
+    <p style="text-align: center; color: #7f8c8d;">A Complete Guide for High School Students</p>
+
+    <h2>1. What are Objects?</h2>
+    <div class="example-box">
+        <p>An <strong>object</strong> is a special data type that allows you to store multiple related values together as properties. Think of it like a real-world object that has characteristics.</p>
+        
+        <p><strong>Real-world example:</strong></p>
+        <ul>
+            <li>A <strong>car</strong> has properties: brand, model, color, year</li>
+            <li>A <strong>student</strong> has properties: name, age, grade, school</li>
+            <li>A <strong>book</strong> has properties: title, author, pages, price</li>
+        </ul>
+
+        <p>In JavaScript, an object groups related data together using <strong>key-value pairs</strong>.</p>
+        
+        <div class="code">// Example of a student object
+let student = {
+    name: "Sarah",
+    age: 16,
+    grade: 11,
+    school: "Lincoln High"
+};</div>
+    </div>
+
+    <h2>2. Why We Need Objects?</h2>
+    <div class="example-box">
+        <p>Objects help us organize related information in a clean and meaningful way.</p>
+
+        <h3>Without Objects (messy):</h3>
+        <div class="code">let studentName = "John";
+let studentAge = 17;
+let studentGrade = 12;
+let studentSchool = "Oak High";
+
+let studentName2 = "Emma";
+let studentAge2 = 16;
+let studentGrade2 = 11;
+let studentSchool2 = "Oak High";</div>
+
+        <p>This gets very messy with multiple students!</p>
+
+        <h3>With Objects (organized):</h3>
+        <div class="code">let student1 = {
+    name: "John",
+    age: 17,
+    grade: 12,
+    school: "Oak High"
+};
+
+let student2 = {
+    name: "Emma",
+    age: 16,
+    grade: 11,
+    school: "Oak High"
+};</div>
+
+        <p><strong>Benefits:</strong></p>
+        <ul>
+            <li>Groups related data together</li>
+            <li>Makes code easier to read and understand</li>
+            <li>Easier to pass around in your program</li>
+            <li>Better represents real-world entities</li>
+        </ul>
+    </div>
+
+    <h2>3. How to Declare an Object</h2>
+    <div class="example-box">
+        <h3>Syntax:</h3>
+        <div class="syntax">let objectName = {
+    property1: value1,
+    property2: value2,
+    property3: value3
+};</div>
+
+        <p>Objects are created using curly braces <code>{ }</code>. Inside, we define properties using the format <code>key: value</code>, separated by commas.</p>
+
+        <h3>Example 1: Creating a car object</h3>
+        <div class="code">let car = {
+    brand: "Toyota",
+    model: "Camry",
+    year: 2022,
+    color: "blue"
+};</div>
+
+        <h3>Example 2: Creating a book object</h3>
+        <div class="code">let book = {
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    pages: 180,
+    published: 1925
+};</div>
+
+        <h3>Example 3: Creating a product object</h3>
+        <div class="code">let product = {
+    name: "Laptop",
+    price: 899.99,
+    inStock: true,
+    category: "Electronics"
+};</div>
+
+        <div class="note">
+            <strong>Note:</strong> Property names (keys) are on the left, values are on the right. Values can be strings, numbers, booleans, etc.
+        </div>
+
+        <h3>Interactive Example:</h3>
+        <button onclick="let person = {name: 'Alice', age: 18, city: 'Boston'}; document.getElementById('output1').innerText = 'Created object: ' + JSON.stringify(person, null, 2);">Create Object</button>
+        <div id="output1" class="output">Click the button to create an object!</div>
+    </div>
+
+    <h2>4. Accessing Object Properties (Dot Notation)</h2>
+    <div class="example-box">
+        <h3>Syntax:</h3>
+        <div class="syntax">objectName.propertyName</div>
+
+        <p>To access a specific property of an object, use the <strong>dot notation</strong>: write the object name, followed by a dot, followed by the property name.</p>
+
+        <h3>Example:</h3>
+        <div class="code">let student = {
+    name: "Mike",
+    age: 17,
+    grade: 12
+};
+
+console.log(student.name);   // Output: Mike
+console.log(student.age);    // Output: 17
+console.log(student.grade);  // Output: 12</div>
+
+        <h3>Using Object Properties:</h3>
+        <div class="code">let car = {
+    brand: "Honda",
+    model: "Civic",
+    year: 2023
+};
+
+let message = "I drive a " + car.brand + " " + car.model;
+console.log(message);  // Output: I drive a Honda Civic</div>
+
+        <h3>Modifying Object Properties:</h3>
+        <div class="code">let person = {
+    name: "Lisa",
+    age: 25,
+    city: "Seattle"
+};
+
+person.age = 26;           // Change age
+person.city = "Portland";  // Change city
+
+console.log(person.age);   // Output: 26
+console.log(person.city);  // Output: Portland</div>
+
+        <h3>Interactive Examples:</h3>
+        <button onclick="let car = {brand: 'Ford', model: 'Mustang', year: 2024}; document.getElementById('output2').innerText = 'Brand: ' + car.brand + '\nModel: ' + car.model + '\nYear: ' + car.year;">Access Properties</button>
+        <button onclick="let item = {name: 'Phone', price: 599}; let info = item.name + ' costs $' + item.price; document.getElementById('output2').innerText = info;">Use in Expression</button>
+        <div id="output2" class="output">Click a button to access object properties!</div>
+    </div>
+
+    <h2>5. Array of Objects</h2>
+    <div class="example-box">
+        <p>An <strong>array of objects</strong> is simply an array where each element is an object. This is very useful when you have multiple items of the same type.</p>
+
+        <h3>Syntax:</h3>
+        <div class="syntax">let arrayName = [
+    { property1: value1, property2: value2 },
+    { property1: value1, property2: value2 },
+    { property1: value1, property2: value2 }
+];</div>
+
+        <h3>Example 1: Array of students</h3>
+        <div class="code">let students = [
+    { name: "John", age: 16, grade: 10 },
+    { name: "Sarah", age: 17, grade: 11 },
+    { name: "Mike", age: 16, grade: 10 },
+    { name: "Emma", age: 18, grade: 12 }
+];</div>
+
+        <h3>Example 2: Array of products</h3>
+        <div class="code">let products = [
+    { name: "Laptop", price: 999, category: "Electronics" },
+    { name: "Desk", price: 299, category: "Furniture" },
+    { name: "Mouse", price: 25, category: "Electronics" }
+];</div>
+
+        <h3>Example 3: Array of books</h3>
+        <div class="code">let books = [
+    { title: "1984", author: "George Orwell", pages: 328 },
+    { title: "To Kill a Mockingbird", author: "Harper Lee", pages: 281 },
+    { title: "The Hobbit", author: "J.R.R. Tolkien", pages: 310 }
+];</div>
+
+        <div class="note">
+            <strong>Why use arrays of objects?</strong> When you have multiple similar items (like multiple students, products, or books), arrays of objects keep your data organized and easy to work with.
+        </div>
+
+        <h3>Interactive Example:</h3>
+        <button onclick="let cars = [{brand: 'Toyota', model: 'Corolla'}, {brand: 'Honda', model: 'Accord'}, {brand: 'Ford', model: 'F150'}]; document.getElementById('output3').innerText = 'Created array with ' + cars.length + ' cars:\n' + JSON.stringify(cars, null, 2);">Create Array of Objects</button>
+        <div id="output3" class="output">Click the button to create an array of objects!</div>
+    </div>
+
+    <h2>6. Accessing Array of Objects</h2>
+    <div class="example-box">
+        <p>To access a specific object in an array, use the array index. Then use dot notation to access properties of that object.</p>
+
+        <h3>Syntax:</h3>
+        <div class="syntax">arrayName[index].propertyName</div>
+
+        <h3>Step-by-step breakdown:</h3>
+        <ol>
+            <li><code>arrayName[index]</code> - Gets the object at that index</li>
+            <li><code>.propertyName</code> - Gets the property from that object</li>
+        </ol>
+
+        <h3>Example:</h3>
+        <div class="code">let students = [
+    { name: "Alex", age: 16, grade: 10 },
+    { name: "Beth", age: 17, grade: 11 },
+    { name: "Carl", age: 16, grade: 10 }
+];
+
+// Access the first student (index 0)
+console.log(students[0].name);   // Output: Alex
+console.log(students[0].age);    // Output: 16
+
+// Access the second student (index 1)
+console.log(students[1].name);   // Output: Beth
+console.log(students[1].grade);  // Output: 11
+
+// Access the third student (index 2)
+console.log(students[2].name);   // Output: Carl</div>
+
+        <h3>Another Example:</h3>
+        <div class="code">let products = [
+    { name: "Phone", price: 699 },
+    { name: "Tablet", price: 499 },
+    { name: "Laptop", price: 1299 }
+];
+
+console.log(products[0].name);   // Output: Phone
+console.log(products[0].price);  // Output: 699
+
+console.log(products[2].name);   // Output: Laptop
+console.log(products[2].price);  // Output: 1299</div>
+
+        <h3>Index Reference Table:</h3>
+        <table>
+            <tr>
+                <th>Index</th>
+                <th>Object</th>
+                <th>Access Example</th>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>First object</td>
+                <td>arrayName[0].property</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Second object</td>
+                <td>arrayName[1].property</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Third object</td>
+                <td>arrayName[2].property</td>
+            </tr>
+        </table>
+
+        <h3>Interactive Examples:</h3>
+        <button onclick="let books = [{title: '1984', author: 'Orwell'}, {title: 'Hamlet', author: 'Shakespeare'}]; document.getElementById('output4').innerText = 'First book: ' + books[0].title + ' by ' + books[0].author + '\nSecond book: ' + books[1].title + ' by ' + books[1].author;">Access Objects</button>
+        <div id="output4" class="output">Click the button to access array of objects!</div>
+    </div>
+
+    <h2>7. Displaying Array of Objects Using Classic for Loop</h2>
+    <div class="example-box">
+        <h3>Syntax:</h3>
+        <div class="syntax">for (let i = 0; i < arrayName.length; i++) {
+    console.log(arrayName[i].propertyName);
+}</div>
+
+        <p>The classic for loop uses an index to access each object in the array, then uses dot notation to access properties.</p>
+
+        <h3>Example 1: Display student names</h3>
+        <div class="code">let students = [
+    { name: "Alice", age: 16, grade: 10 },
+    { name: "Bob", age: 17, grade: 11 },
+    { name: "Charlie", age: 16, grade: 10 }
+];
+
+for (let i = 0; i < students.length; i++) {
+    console.log(students[i].name);
+}
+
+// Output:
+// Alice
+// Bob
+// Charlie</div>
+
+        <h3>Example 2: Display all properties</h3>
+        <div class="code">let products = [
+    { name: "Keyboard", price: 79 },
+    { name: "Monitor", price: 299 },
+    { name: "Mouse", price: 25 }
+];
+
+for (let i = 0; i < products.length; i++) {
+    console.log("Product: " + products[i].name);
+    console.log("Price: $" + products[i].price);
+    console.log("---");
+}
+
+// Output:
+// Product: Keyboard
+// Price: $79
+// ---
+// Product: Monitor
+// Price: $299
+// ---
+// Product: Mouse
+// Price: $25
+// ---</div>
+
+        <h3>Example 3: Using index in output</h3>
+        <div class="code">let cars = [
+    { brand: "Toyota", model: "Camry" },
+    { brand: "Honda", model: "Civic" },
+    { brand: "Ford", model: "Fusion" }
+];
+
+for (let i = 0; i < cars.length; i++) {
+    console.log("Car " + (i + 1) + ": " + cars[i].brand + " " + cars[i].model);
+}
+
+// Output:
+// Car 1: Toyota Camry
+// Car 2: Honda Civic
+// Car 3: Ford Fusion</div>
+
+        <div class="note">
+            <strong>Why use classic for loop?</strong> When you need the index number for numbering or positioning items.
+        </div>
+
+        <h3>Interactive Example:</h3>
+        <button onclick="let items = [{name: 'Apple', price: 1.5}, {name: 'Banana', price: 0.8}, {name: 'Orange', price: 1.2}]; let result = ''; for (let i = 0; i < items.length; i++) { result += 'Item ' + (i+1) + ': ' + items[i].name + ' - $' + items[i].price + '\n'; } document.getElementById('output5').innerText = result;">Run Classic for Loop</button>
+        <div id="output5" class="output">Click the button to display array of objects with for loop!</div>
+    </div>
+
+    <h2>8. Displaying Array of Objects Using for...of Loop</h2>
+    <div class="example-box">
+        <h3>Syntax:</h3>
+        <div class="syntax">for (let object of arrayName) {
+    console.log(object.propertyName);
+}</div>
+
+        <p>The <strong>for...of</strong> loop gives you each object directly, making it simpler when you don't need the index.</p>
+
+        <h3>Example 1: Display book titles</h3>
+        <div class="code">let books = [
+    { title: "Harry Potter", author: "J.K. Rowling" },
+    { title: "Lord of the Rings", author: "J.R.R. Tolkien" },
+    { title: "1984", author: "George Orwell" }
+];
+
+for (let book of books) {
+    console.log(book.title);
+}
+
+// Output:
+// Harry Potter
+// Lord of the Rings
+// 1984</div>
+
+        <h3>Example 2: Display multiple properties</h3>
+        <div class="code">let students = [
+    { name: "David", age: 17, grade: 11 },
+    { name: "Emma", age: 16, grade: 10 },
+    { name: "Frank", age: 18, grade: 12 }
+];
+
+for (let student of students) {
+    console.log(student.name + " is " + student.age + " years old");
+}
+
+// Output:
+// David is 17 years old
+// Emma is 16 years old
+// Frank is 18 years old</div>
+
+        <h3>Example 3: Calculate total</h3>
+        <div class="code">let items = [
+    { name: "Shirt", price: 29.99 },
+    { name: "Pants", price: 49.99 },
+    { name: "Shoes", price: 79.99 }
+];
+
+let total = 0;
+for (let item of items) {
+    console.log(item.name + ": $" + item.price);
+    total += item.price;
+}
+console.log("Total: $" + total);
+
+// Output:
+// Shirt: $29.99
+// Pants: $49.99
+// Shoes: $79.99
+// Total: $159.97</div>
+
+        <div class="note">
+            <strong>Why use for...of?</strong> Cleaner and simpler when you just need to access each object without needing the index number.
+        </div>
+
+        <h3>Interactive Example:</h3>
+        <button onclick="let pets = [{name: 'Max', type: 'Dog'}, {name: 'Whiskers', type: 'Cat'}, {name: 'Tweety', type: 'Bird'}]; let result = ''; for (let pet of pets) { result += pet.name + ' is a ' + pet.type + '\n'; } document.getElementById('output6').innerText = result;">Run for...of Loop</button>
+        <div id="output6" class="output">Click the button to display array of objects with for...of!</div>
+    </div>
+
+    <h2>9. Displaying Array of Objects Using forEach()</h2>
+    <div class="example-box">
+        <h3>Syntax:</h3>
+        <div class="syntax">arrayName.forEach(function(object, index) {
+    console.log(object.propertyName);
+});</div>
+
+        <p>The <strong>forEach()</strong> method executes a function for each object in the array. It gives you both the object and its index.</p>
+
+        <h3>Parameters:</h3>
+        <ul>
+            <li><strong>object</strong> - The current object being processed</li>
+            <li><strong>index</strong> - The index of the current object (optional)</li>
+        </ul>
+
+        <h3>Example 1: Display using only object</h3>
+        <div class="code">let movies = [
+    { title: "Inception", year: 2010 },
+    { title: "The Matrix", year: 1999 },
+    { title: "Interstellar", year: 2014 }
+];
+
+movies.forEach(function(movie) {
+    console.log(movie.title + " (" + movie.year + ")");
+});
+
+// Output:
+// Inception (2010)
+// The Matrix (1999)
+// Interstellar (2014)</div>
+
+        <h3>Example 2: Display using object and index</h3>
+        <div class="code">let games = [
+    { name: "Chess", players: 2 },
+    { name: "Soccer", players: 22 },
+    { name: "Tennis", players: 2 }
+];
+
+games.forEach(function(game, index) {
+    console.log((index + 1) + ". " + game.name + " - " + game.players + " players");
+});
+
+// Output:
+// 1. Chess - 2 players
+// 2. Soccer - 22 players
+// 3. Tennis - 2 players</div>
+
+        <h3>Example 3: Perform calculations</h3>
+        <div class="code">let scores = [
+    { student: "John", score: 85 },
+    { student: "Sarah", score: 92 },
+    { student: "Mike", score: 78 }
+];
+
+let sum = 0;
+scores.forEach(function(item) {
+    console.log(item.student + " scored " + item.score);
+    sum += item.score;
+});
+console.log("Average: " + (sum / scores.length));
+
+// Output:
+// John scored 85
+// Sarah scored 92
+// Mike scored 78
+// Average: 85</div>
+
+        <div class="note">
+            <strong>Why use forEach()?</strong> Modern and clean syntax. Great when you want to perform an action on each object. Can use both the object and index when needed.
+        </div>
+
+        <h3>Interactive Examples:</h3>
+        <button onclick="let cities = [{name: 'New York', population: 8000000}, {name: 'Los Angeles', population: 4000000}, {name: 'Chicago', population: 2700000}]; let result = ''; cities.forEach(function(city, idx) { result += (idx+1) + '. ' + city.name + ': ' + city.population.toLocaleString() + ' people\n'; }); document.getElementById('output7').innerText = result;">Run forEach() with Index</button>
+        <button onclick="let foods = [{name: 'Pizza', calories: 285}, {name: 'Salad', calories: 150}, {name: 'Burger', calories: 540}]; let result = ''; let total = 0; foods.forEach(function(food) { result += food.name + ': ' + food.calories + ' cal\n'; total += food.calories; }); result += '\nTotal: ' + total + ' calories'; document.getElementById('output7').innerText = result;">Calculate Total</button>
+        <div id="output7" class="output">Click a button to display array of objects with forEach()!</div>
+    </div>
+
+    <h2>10. Comparison of Loop Methods</h2>
+    <div class="example-box">
+        <h3>Quick Comparison Table</h3>
+        <table>
+            <tr>
+                <th>Loop Type</th>
+                <th>Access Index?</th>
+                <th>Syntax Complexity</th>
+                <th>Best Used When</th>
+            </tr>
+            <tr>
+                <td>Classic for</td>
+                <td>Yes</td>
+                <td>Medium</td>
+                <td>You need the index number</td>
+            </tr>
+            <tr>
+                <td>for...of</td>
+                <td>No</td>
+                <td>Simple</td>
+                <td>You only need the object values</td>
+            </tr>
+            <tr>
+                <td>forEach()</td>
+                <td>Yes (optional)</td>
+                <td>Simple</td>
+                <td>Modern code, optional index access</td>
+            </tr>
+        </table>
+
+        <h3>Same Task - Three Different Ways</h3>
+        <p>Let's display the same data using all three methods:</p>
+
+        <div class="code">let phones = [
+    { brand: "Apple", model: "iPhone 14" },
+    { brand: "Samsung", model: "Galaxy S23" },
+    { brand: "Google", model: "Pixel 7" }
+];
+
+// Method 1: Classic for loop
+console.log("Using classic for loop:");
+for (let i = 0; i < phones.length; i++) {
+    console.log(phones[i].brand + " " + phones[i].model);
+}
+
+// Method 2: for...of loop
+console.log("\nUsing for...of loop:");
+for (let phone of phones) {
+    console.log(phone.brand + " " + phone.model);
+}
+
+// Method 3: forEach()
+console.log("\nUsing forEach():");
+phones.forEach(function(phone) {
+    console.log(phone.brand + " " + phone.model);
+});</div>
+
+        <p>All three produce the same output:</p>
+        <div class="output">Apple iPhone 14
+Samsung Galaxy S23
+Google Pixel 7</div>
+
+        <h3>Interactive Comparison:</h3>
+        <button onclick="let items = [{name: 'Laptop', price: 999}, {name: 'Phone', price: 699}, {name: 'Tablet', price: 499}]; let r1='Classic for:\n', r2='for...of:\n', r3='forEach():\n'; for(let i=0; i<items.length; i++){r1+=items[i].name+' $'+items[i].price+'\n';} for(let item of items){r2+=item.name+' $'+item.price+'\n';} items.forEach(function(item){r3+=item.name+' $'+item.price+'\n';}); document.getElementById('output8').innerText = r1 + '\n' + r2 + '\n' + r3;">Compare All Three</button>
+        <div id="output8" class="output">Click to see all three loop methods!</div>
+    </div>
+
+    <h2>Summary</h2>
+    <div class="example-box">
+        <h3>Key Concepts Recap</h3>
+        
+        <table>
+            <tr>
+                <th>Concept</th>
+                <th>Syntax</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>Create Object</td>
+                <td>{ key: value }</td>
+                <td>let car = { brand: "Toyota" };</td>
+            </tr>
+            <tr>
+                <td>Access Property</td>
+                <td>object.property</td>
+                <td>car.brand</td>
+            </tr>
+            <tr>
+                <td>Array of Objects</td>
+                <td>[{}, {}, {}]</td>
+                <td>let cars = [{brand: "Ford"}, ...];</td>
+            </tr>
+            <tr>
+                <td>Access Array Object</td>
+                <td>array[index].property</td>
+                <td>cars[0].brand</td>
+            </tr>
+            <tr>
+                <td>Classic for Loop</td>
+                <td>for (i=0; i&lt;len; i++)</td>
+                <td>for (let i=0; i&lt;cars.length; i++)</td>
+            </tr>
+            <tr>
+                <td>for...of Loop</td>
+                <td>for (item of array)</td>
+                <td>for (let car of cars)</td>
+            </tr>
+            <tr>
+                <td>forEach()</td>
+                <td>array.forEach(fn)</td>
+                <td>cars.forEach(function(car){})</td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="background-color: #d4edda; border: 2px solid #28a745; border-radius: 5px; padding: 20px; margin-top: 30px; text-align: center;">
+        <h3 style="color: #155724; margin-top: 0;">Congratulations!</h3>
+        <p style="color: #155724;">You've completed the JavaScript Objects Tutorial. Practice creating objects and working with arrays of objects to master these concepts!</p>
+    </div>
+
+    <footer style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #ddd; color: #7f8c8d;">
+        <p>JavaScript Objects Tutorial </p>
+        <p>Keep practicing and happy coding! 🚀</p>
+    </footer>
+
+</body>
+</html>
